@@ -3,200 +3,255 @@
 <html lang="so">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hibaaq Abdiaziiz 🎁</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f9d8eb">
+<title>Hibaaq's Magical Gift 💖</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+:root{
+ --pink:#f8cce2;--purple:#bba6e9;
+ --dark:#75456f;--gold:#e8c777;
 }
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Georgia, serif;
-  text-align: center;
-  color: #75476f;
-  background: linear-gradient(145deg,
-    #fff0f6, #eadfff, #fff5e8);
-  padding: 22px 14px;
+body{
+ margin:0;min-height:100vh;
+ font-family:Georgia,serif;color:var(--dark);
+ background:linear-gradient(145deg,#fff0f7,#eee5ff,#fff5e8);
+ overflow-x:hidden;
 }
-
-.card {
-  max-width: 500px;
-  margin: 20px auto;
-  padding: 30px 20px;
-  background: rgba(255,255,255,.82);
-  border: 1px solid white;
-  border-radius: 25px;
-  box-shadow: 0 12px 40px #a984b533;
-  animation: appear .7s ease;
+#sky{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:5}
+.floaty{
+ position:absolute;bottom:-45px;
+ animation:rise linear forwards;opacity:.85;
 }
-
-h1 {
-  font-size: 35px;
-  color: #a45f99;
+@keyframes rise{
+ to{transform:translateY(-115vh) rotate(360deg);opacity:0}
 }
-
-h2 {
-  color: #a45f99;
+.page{
+ width:min(100% - 24px,520px);
+ margin:20px auto;padding:28px 19px;
+ text-align:center;border-radius:30px;
+ background:#ffffffd9;
+ border:1px solid white;
+ box-shadow:0 15px 55px #9873b52b;
+ animation:enter .65s ease;
+ position:relative;
 }
-
-p {
-  font-size: 18px;
-  line-height: 1.8;
+.hidden{display:none!important}
+@keyframes enter{
+ from{opacity:0;transform:translateY(18px) scale(.98)}
+ to{opacity:1;transform:translateY(0) scale(1)}
 }
-
-.gift {
-  font-size: 85px;
-  animation: float 2s infinite ease-in-out;
+h1{font-size:clamp(32px,9vw,47px);color:#ad6da6;margin:12px 0}
+h2{color:#a36ba5;font-size:27px}
+p{font-size:17px;line-height:1.8}
+.small{font-size:13px;color:#a188a6}
+button{
+ display:block;width:100%;max-width:340px;
+ margin:13px auto;padding:15px 17px;
+ border:0;border-radius:30px;
+ color:white;font-size:16px;font-weight:bold;
+ background:linear-gradient(110deg,#e98fba,#aa91df);
+ box-shadow:0 8px 20px #b58dbf44;
+ cursor:pointer;transition:.2s;
 }
-
-button {
-  width: 100%;
-  max-width: 320px;
-  padding: 15px;
-  margin: 12px auto;
-  border: none;
-  border-radius: 30px;
-  color: white;
-  font-size: 17px;
-  font-weight: bold;
-  background: linear-gradient(100deg,#e78db8,#a78bd4);
-  box-shadow: 0 7px 18px #bd8fbd55;
-  cursor: pointer;
+button:active{transform:scale(.97)}
+.soft{background:#fff;color:#986da1;border:1px solid #f0d9ee;box-shadow:none}
+.emoji{font-size:76px;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px) rotate(4deg)}}
+.flowers{font-size:27px;letter-spacing:7px;margin:18px 0}
+.line{color:#c89abb;letter-spacing:8px}
+.badge{
+ display:inline-block;padding:8px 14px;border-radius:20px;
+ background:#fbe7f2;color:#aa6c9b;font-size:12px;
+ letter-spacing:2px;
 }
-
-.hidden {
-  display: none;
+.note{
+ background:linear-gradient(135deg,#fff4fa,#f3edff);
+ border:1px solid #f4dfef;border-radius:19px;
+ padding:15px;margin:12px 0;
 }
-
-.flower {
-  font-size: 28px;
-  margin: 20px;
+.note p{margin:0}
+.heart{font-size:23px;display:inline-block;animation:heartbeat 1.3s infinite}
+@keyframes heartbeat{50%{transform:scale(1.25)}}
+.giftbox{
+ width:145px;height:125px;position:relative;
+ margin:28px auto 35px;cursor:pointer;
+ animation:bob 2s infinite;
 }
-
-iframe {
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  border: none;
-  border-radius: 16px;
+.boxbody{
+ position:absolute;bottom:0;left:0;width:145px;height:88px;
+ border-radius:8px;background:linear-gradient(120deg,#ee9fc5,#c29de8);
+ box-shadow:0 13px 20px #b68ab533;
 }
-
-@keyframes float {
-  50% { transform: translateY(-10px); }
+.lid{
+ position:absolute;top:22px;left:-7px;width:159px;height:32px;
+ border-radius:7px;background:linear-gradient(120deg,#f7c1db,#d8b4ee);
+ transition:.6s;z-index:2;
 }
-
-@keyframes appear {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+.ribbon{position:absolute;left:62px;top:22px;width:22px;height:103px;background:#fff0b9;z-index:3}
+.bow{
+ position:absolute;top:0;left:47px;width:50px;height:30px;
+ border:9px solid #fff0b9;border-radius:50%;z-index:4;
 }
+.giftbox.open .lid{transform:translateY(-55px) rotate(-13deg)}
+.giftbox.open{animation:pop .6s}
+@keyframes pop{50%{transform:scale(1.12)}}
+.progress{display:flex;justify-content:center;gap:7px;margin:15px}
+.dot{width:8px;height:8px;border-radius:50%;background:#e5c9e0}
+.dot.active{background:#b482bd}
+.video{
+ width:100%;aspect-ratio:9/16;border:0;border-radius:18px;
+ background:#f6e5f2;
+}
+.footer{font-size:12px;color:#a88ba5;margin:22px}
 </style>
 </head>
 
 <body>
+<div id="sky"></div>
 
-<section class="card" id="page1">
-  <div class="flower">🌸 ✨ 🦋</div>
-  <div class="gift">🎁</div>
+<section class="page" id="p1">
+ <div class="badge">SPECIAL GIFT ✨</div>
+ <div class="flowers">🌷 🦋 🌸</div>
+ <p>Wax yar oo qurux badan ayaa kuu diyaar ah...</p>
+ <h1>Hibaaq Abdiaziiz</h1>
+ <p>Ma diyaar baad u tahay inaad ogaato waxa kuu qarsoon?</p>
 
-  <h1>Hibaaq Abdiaziiz</h1>
+ <div class="giftbox" id="gift" onclick="openGift()">
+  <div class="bow"></div>
+  <div class="lid"></div>
+  <div class="boxbody"></div>
+  <div class="ribbon"></div>
+ </div>
 
-  <p>
-    Waxaan kuu hayaa wax yar oo gaar ah...
-    diyaar ma u tahay? 💗
-  </p>
-
-  <button onclick="showPage('page2')">
-    Fur hadiyadda 🎀
-  </button>
+ <button onclick="openGift()">Fur hadiyadda 🎁</button>
+ <p class="small">Waxaa loo diyaariyey qof gaar ah 💗</p>
 </section>
 
-<section class="card hidden" id="page2">
-  <h2>Hibaaq, erayo adiga kuu gaar ah 🌷</h2>
-
-  <p>
-    Dadka qaar waxay leeyihiin qurux indhaha
-    lagu arko, qaarna waxay leeyihiin iftiin
-    qalbiga laga dareemo.
-  </p>
-
-  <p>
-    Dhoolla-caddayn yar ayaa mararka qaar
-    maalinta caadiga ah ka dhigi karta
-    maalin gaar ah. ✨
-  </p>
-
-  <p>
-    Waxaad leedahay wax gaar ah oo aan
-    hadal badan u baahnayn si loo dareemo. 🌸
-  </p>
-
-  <div class="flower">💐 💕 💐</div>
-
-  <button onclick="showPage('page3')">
-    Sir yar ma kuu sheegaa? 💌
-  </button>
+<section class="page hidden" id="p2">
+ <div class="badge">WELCOMЕ, HIBAAQ 🌸</div>
+ <div class="emoji">🦋</div>
+ <h2>Ku soo dhowow dunidaada yar</h2>
+ <p>
+  Maanta ma aha inaad wax gaar ah samayso.
+  Kaliya naso, dhoolla-caddee, oo akhri
+  erayadan yar ee adiga laguu diyaariyey.
+ </p>
+ <div class="flowers">🌸 ✨ 🌷 ✨ 🌸</div>
+ <button onclick="go('p3')">Aan sii soconno 💕</button>
 </section>
 
-<section class="card hidden" id="page3">
-  <div class="flower">🦋 💗 ✨</div>
+<section class="page hidden" id="p3">
+ <div class="badge">ERAYO QURUX BADAN</div>
+ <h2>Waxyaabo mudan in la xuso 🌹</h2>
 
-  <h2>Sir yar oo qarsoon...</h2>
+ <div class="note"><p>✨ Quruxda dhabta ahi mar walba ma aha muuqaal; mararka qaar waa sida qofku dadka kale u dareensiiyo.</p></div>
+ <div class="note"><p>🌷 Dhoolla-caddaynta qof wanaagsan waxay maalinta caadiga ah ka dhigi kartaa xusuus qurux badan.</p></div>
+ <div class="note"><p>🦋 Dadka qaar waxay leeyihiin degganaansho iyo iftiin aan si fudud loo sharxi karin.</p></div>
+ <div class="note"><p>💖 Hibaaq, qof walba wuxuu leeyahay wax u gaar ah, adigana waxaa laguu sameeyey boggan si laguugu xuso.</p></div>
 
-  <p>
-    Mararka qaar qof ayaa xusuustaada ku yeesha
-    meel gaar ah, adigoon si fudud u sharxi karin
-    sababta. Qofkaasna wuxuu maalmaha qaar
-    ka dhigaa kuwo ka sii qurux badan. 🌙
-  </p>
-
-  <button onclick="showPage('page4')">
-    Gabadha ammaantaas leh waa tuma? 🎬
-  </button>
+ <button onclick="go('p4')">Wax kale i tus ✨</button>
 </section>
 
-<section class="card hidden" id="page4">
-  <div class="flower">🌹 ✨ 💕</div>
-
-  <h2>Waa adiga, Hibaaq! ❤️</h2>
-
-  <p>
-    Gabadha ammaantaas oo dhan leh waa tan...
-    fiiri! 🥹🌸
-  </p>
-
-  <iframe
-    src="https://www.kapwing.com/e/6ad4df03bff05e6653e51ab6"
-    title="Video-ga Hibaaq"
-    allow="autoplay; gyroscope; fullscreen"
-    allowfullscreen>
-  </iframe>
-
-  <p>
-    Hibaaq Abdiaziiz, qof gaar ah ayaad tahay. 💗
-  </p>
-
-  <button onclick="showPage('page1')">
-    Dib uga bilow 🎁
-  </button>
+<section class="page hidden" id="p4">
+ <div class="badge">Tijaabi nasiibkaaga ⭐</div>
+ <div class="emoji">🌟</div>
+ <h2>Taabo xiddigta!</h2>
+ <p>Taabo xiddigta hoose si aad u hesho farriin yar oo kale.</p>
+ <button class="soft" onclick="starMessage()">⭐ Taabo xiddigta ⭐</button>
+ <div id="starText" class="note hidden"></div>
+ <button onclick="go('p5')">Waxaan rabaa sirta 💌</button>
 </section>
+
+<section class="page hidden" id="p5">
+ <div class="badge">SIR YAR 💌</div>
+ <div class="emoji">💌</div>
+ <h2>Wax aan si fudud loo sheegin...</h2>
+ <p>
+  Mararka qaar, qof ayaa xusuustaada ku yeesha
+  meel gaar ah adigoon si fudud u sharxi karin sababta.
+  Qofkaas wuxuu maalmaha qaar ka dhigaa kuwo ka sii qurux badan.
+ </p>
+ <div class="line">✧ ✿ ✧</div>
+ <p>Haddaba, diyaar ma u tahay qaybta ugu dambaysa?</p>
+ <button onclick="go('p6')">Haa, i tus! 🎬</button>
+</section>
+
+<section class="page hidden" id="p6">
+ <div class="badge">JAWAABTII UGU DAMBAYSAY</div>
+ <div class="flowers">🌹 ✨ 🦋 ✨ 🌹</div>
+ <h1>Waa adiga, Hibaaq!</h1>
+ <div class="heart">💖</div>
+ <p>
+  Gabadha ammaantaas oo dhan leh waa tan...
+  hadda si fiican u fiiri! 🌸
+ </p>
+
+ <iframe class="video"
+  src="https://www.kapwing.com/e/6ad4df03bff05e6653e51ab6"
+  title="Video-ga Hibaaq Abdiaziiz"
+  allow="autoplay; gyroscope; fullscreen"
+  allowfullscreen
+  referrerpolicy="strict-origin">
+ </iframe>
+
+ <p>
+  <strong>Hibaaq Abdiaziiz</strong><br>
+  Dadka qaar waa la kulmaa, qaarna si qurux badan ayay xusuusta ugu haraan. ✨
+ </p>
+ <div class="flowers">🌷 💕 🌷</div>
+ <button class="soft" onclick="go('p1')">Dib u fur hadiyadda 🎁</button>
+</section>
+
+<div class="footer">Made with care • Hibaaq Abdiaziiz 💗</div>
 
 <script>
-function showPage(pageId) {
-  document.querySelectorAll("section").forEach(
-    page => page.classList.add("hidden")
-  );
+const pages = ["p1","p2","p3","p4","p5","p6"];
 
-  document.getElementById(pageId)
-    .classList.remove("hidden");
+function go(id){
+ pages.forEach(p => document.getElementById(p).classList.add("hidden"));
+ document.getElementById(id).classList.remove("hidden");
+ window.scrollTo({top:0,behavior:"smooth"});
+ if(id==="p6") confetti();
+}
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+function openGift(){
+ const gift=document.getElementById("gift");
+ gift.classList.add("open");
+ setTimeout(()=>{go("p2"); confetti();},550);
+}
+
+const messages=[
+ "Dhoolla-caddayntaadu waa wax yar oo farxad weyn abuuri kara. 🌸",
+ "Waxaad mudan tahay ixtiraam, wanaag iyo maalmo farxad leh. ✨",
+ "Mararka qaar hadiyadaha ugu fiican waa kuwa qofka xusuusiya inuu gaar yahay. 💗",
+ "Qof wanaagsan wuxuu raad qurux badan ku reebaa xusuusta dadka. 🦋"
+];
+let messageIndex=0;
+
+function starMessage(){
+ const box=document.getElementById("starText");
+ box.textContent=messages[messageIndex%messages.length];
+ messageIndex++;
+ box.classList.remove("hidden");
+ confetti();
+}
+
+function confetti(){
+ const sky=document.getElementById("sky");
+ const symbols=["💗","✨","🌸","💕","🦋","⭐"];
+ for(let i=0;i<22;i++){
+  const el=document.createElement("span");
+  el.className="floaty";
+  el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  el.style.left=Math.random()*100+"%";
+  el.style.fontSize=(14+Math.random()*20)+"px";
+  el.style.animationDuration=(3+Math.random()*4)+"s";
+  sky.appendChild(el);
+  setTimeout(()=>el.remove(),7500);
+ }
 }
 </script>
-
 </body>
 </html>
