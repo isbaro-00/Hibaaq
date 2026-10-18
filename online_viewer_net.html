@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="so">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hibaaq Abdiaziiz 🎁</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  text-align: center;
+  color: #75476f;
+  background: linear-gradient(145deg,
+    #fff0f6, #eadfff, #fff5e8);
+  padding: 22px 14px;
+}
+
+.card {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 30px 20px;
+  background: rgba(255,255,255,.82);
+  border: 1px solid white;
+  border-radius: 25px;
+  box-shadow: 0 12px 40px #a984b533;
+  animation: appear .7s ease;
+}
+
+h1 {
+  font-size: 35px;
+  color: #a45f99;
+}
+
+h2 {
+  color: #a45f99;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.gift {
+  font-size: 85px;
+  animation: float 2s infinite ease-in-out;
+}
+
+button {
+  width: 100%;
+  max-width: 320px;
+  padding: 15px;
+  margin: 12px auto;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  background: linear-gradient(100deg,#e78db8,#a78bd4);
+  box-shadow: 0 7px 18px #bd8fbd55;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.flower {
+  font-size: 28px;
+  margin: 20px;
+}
+
+iframe {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border: none;
+  border-radius: 16px;
+}
+
+@keyframes float {
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<section class="card" id="page1">
+  <div class="flower">🌸 ✨ 🦋</div>
+  <div class="gift">🎁</div>
+
+  <h1>Hibaaq Abdiaziiz</h1>
+
+  <p>
+    Waxaan kuu hayaa wax yar oo gaar ah...
+    diyaar ma u tahay? 💗
+  </p>
+
+  <button onclick="showPage('page2')">
+    Fur hadiyadda 🎀
+  </button>
+</section>
+
+<section class="card hidden" id="page2">
+  <h2>Hibaaq, erayo adiga kuu gaar ah 🌷</h2>
+
+  <p>
+    Dadka qaar waxay leeyihiin qurux indhaha
+    lagu arko, qaarna waxay leeyihiin iftiin
+    qalbiga laga dareemo.
+  </p>
+
+  <p>
+    Dhoolla-caddayn yar ayaa mararka qaar
+    maalinta caadiga ah ka dhigi karta
+    maalin gaar ah. ✨
+  </p>
+
+  <p>
+    Waxaad leedahay wax gaar ah oo aan
+    hadal badan u baahnayn si loo dareemo. 🌸
+  </p>
+
+  <div class="flower">💐 💕 💐</div>
+
+  <button onclick="showPage('page3')">
+    Sir yar ma kuu sheegaa? 💌
+  </button>
+</section>
+
+<section class="card hidden" id="page3">
+  <div class="flower">🦋 💗 ✨</div>
+
+  <h2>Sir yar oo qarsoon...</h2>
+
+  <p>
+    Mararka qaar qof ayaa xusuustaada ku yeesha
+    meel gaar ah, adigoon si fudud u sharxi karin
+    sababta. Qofkaasna wuxuu maalmaha qaar
+    ka dhigaa kuwo ka sii qurux badan. 🌙
+  </p>
+
+  <button onclick="showPage('page4')">
+    Gabadha ammaantaas leh waa tuma? 🎬
+  </button>
+</section>
+
+<section class="card hidden" id="page4">
+  <div class="flower">🌹 ✨ 💕</div>
+
+  <h2>Waa adiga, Hibaaq! ❤️</h2>
+
+  <p>
+    Gabadha ammaantaas oo dhan leh waa tan...
+    fiiri! 🥹🌸
+  </p>
+
+  <iframe
+    src="https://www.kapwing.com/e/6ad4df03bff05e6653e51ab6"
+    title="Video-ga Hibaaq"
+    allow="autoplay; gyroscope; fullscreen"
+    allowfullscreen>
+  </iframe>
+
+  <p>
+    Hibaaq Abdiaziiz, qof gaar ah ayaad tahay. 💗
+  </p>
+
+  <button onclick="showPage('page1')">
+    Dib uga bilow 🎁
+  </button>
+</section>
+
+<script>
+function showPage(pageId) {
+  document.querySelectorAll("section").forEach(
+    page => page.classList.add("hidden")
+  );
+
+  document.getElementById(pageId)
+    .classList.remove("hidden");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+</script>
+
+</body>
+</html>
